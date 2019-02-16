@@ -1,5 +1,5 @@
 ## TODO
-- Initial splash image + logo
-- Add social media icons (links)
+- Align social media icons (mobile + web)
+- Add Google Analytics
 - Add instagram feed
 - Add Concert list?!?!
