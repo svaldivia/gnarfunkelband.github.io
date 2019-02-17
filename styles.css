@@ -47,14 +47,17 @@ main {
 }
 
 
-@media screen and (max-width: 400px) {
+@media only screen and (max-device-width: 400px) {
   .logo {
     width: 300px;
   }
 }
 
-@media screen and (max-width: 780px) {
+@media only screen and (max-device-width: 780px) {
   .logo {
     position: initial;
+  }
+  .social-icons_layout {
+    width: 40px;
   }
 }
