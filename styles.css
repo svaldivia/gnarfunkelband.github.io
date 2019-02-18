@@ -19,9 +19,9 @@ main {
 
 .logo {
   position: absolute;
-  top: -86px;
+  top: -75px;
   left: 30px;
-  width: 600px;
+  width: 500px;
 }
 
 .social-icons_layout {
@@ -39,25 +39,18 @@ main {
   color: #ffffff;
   fill: currentColor;
   transition: 0.2s color ease-out;
-  width: 60px;
+  width: 40px;
 }
 
 .social-icon:hover {
   color: #dbdbdb;
 }
 
-
-@media only screen
-and (max-device-width: 400px) {
-  .logo {
-    width: 800px;
-  }
-}
-
 @media only screen
 and (max-device-width: 780px) {
   .logo {
     position: initial;
+    width: 600px;
   }
   .social-icons_layout {
     position: initial;
