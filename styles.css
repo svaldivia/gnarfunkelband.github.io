@@ -50,7 +50,7 @@ main {
 and (max-device-width: 780px) {
   .logo {
     position: initial;
-    width: 600px;
+    width: 800px;
   }
   .social-icons_layout {
     position: initial;
