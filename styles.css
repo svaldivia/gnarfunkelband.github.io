@@ -48,18 +48,16 @@ main {
 
 
 @media only screen
-and (max-width: 400px)
 and (max-device-width: 400px) {
   .logo {
-    width: 300px;
+    width: 800px;
   }
   .social-icons_layout {
-    width: 30px;
+    width: 95px;
   }
 }
 
 @media only screen
-and (max-width: 780px)
 and (max-device-width: 780px) {
   .logo {
     position: initial;
