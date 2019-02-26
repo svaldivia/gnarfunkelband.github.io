@@ -2,28 +2,29 @@ body {
   background-color: #000000;
   color: #ffffff;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
+
+h1 {
+  font-size: 40px;
+}
+
 main {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
 
 section {
-  width: 100vw;
-}
-
-.section_main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section_main {
   height: 100vh;
-  width: 100vw;
   overflow: hidden;
 }
 
@@ -62,6 +63,10 @@ section {
 /* Mobile */
 @media only screen
 and (max-device-width: 780px) {
+  h1 {
+    font-size: 60px;
+  }
+
   .logo {
     position: initial;
     width: 800px;
@@ -72,6 +77,7 @@ and (max-device-width: 780px) {
     justify-content: center;
     width: 100%;
     height: auto;
+    margin: auto 0;
   }
   .social-icon {
     padding: 0 10px;
