@@ -1,5 +1,5 @@
 ## TODO
-- Responsive web media query
+- Add Concert list?!?!
+- Add Fonts
 - Add Google Analytics
 - Add instagram feed
-- Add Concert list?!?!
