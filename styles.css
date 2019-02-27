@@ -25,7 +25,7 @@ section {
 }
 
 .section_main {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -43,7 +43,7 @@ section {
 
 .logo {
   position: absolute;
-  top: -75px;
+  top: 30px;
   left: 30px;
   width: 500px;
 }
@@ -91,6 +91,7 @@ and (max-device-width: 780px) {
   .logo {
     position: initial;
     width: 800px;
+    padding: 80px 0;
   }
   .social-icons_layout {
     position: initial;
