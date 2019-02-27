@@ -6,6 +6,7 @@ body {
 }
 
 h1 {
+  margin: 0;
   font-size: 40px;
 }
 
@@ -26,6 +27,14 @@ section {
 .section_main {
   height: 100vh;
   overflow: hidden;
+}
+
+.section_tour-dates {
+  padding: 60px;
+}
+
+.tour-dates_title {
+  padding-bottom: 20px;
 }
 
 .splash-image {
@@ -56,8 +65,20 @@ section {
   width: 40px;
 }
 
+.bottom-arrow-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .social-icon:hover {
   color: #dbdbdb;
+}
+
+.tour-dates-wrapper {
+  width: 100%;
 }
 
 /* Mobile */
@@ -85,5 +106,11 @@ and (max-device-width: 780px) {
   }
   .splash-image_wrapper {
     height: auto;
+  }
+
+  .bottom-arrow-icon {
+    width: 70px;
+    height: 70px;
+    bottom: 40px;
   }
 }
