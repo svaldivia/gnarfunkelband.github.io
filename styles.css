@@ -99,7 +99,6 @@ and (max-device-width: 780px) {
     justify-content: center;
     width: 100%;
     height: auto;
-    margin: auto 0;
   }
   .social-icon {
     padding: 0 10px;
