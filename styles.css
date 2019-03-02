@@ -79,7 +79,6 @@ section {
 
 .tour-dates-wrapper {
   width: 100%;
-  font-size: 60px;
 }
 
 /* Mobile */
@@ -114,4 +113,8 @@ and (max-device-width: 780px) {
     height: 70px;
     bottom: 40px;
   }
+
+  .tour-dates-wrapper {
+  font-size: 30px;
+}
 }
