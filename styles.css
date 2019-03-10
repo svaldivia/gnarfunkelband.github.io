@@ -83,7 +83,7 @@ section {
 
 /* Mobile */
 @media only screen
-and (max-width: 780px) {
+and (max-device-width: 780px) {
   h1 {
     font-size: 60px;
   }
@@ -115,7 +115,7 @@ and (max-width: 780px) {
   }
 
   .tour-dates-wrapper {
-    font-size: 30px;
+    font-size: 60px;
   }
 
   .section_tour-dates {
