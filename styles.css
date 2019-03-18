@@ -16,6 +16,7 @@ main {
   bottom: 0;
   right: 0;
   left: 0;
+  overflow: auto;
 }
 
 section {
@@ -96,6 +97,10 @@ and (max-width: 780px) {
     width: 100%;
     height: auto;
   }
+/*
+  .section_main {
+    height: auto;
+  } */
 
   .splash-image_wrapper {
     height: auto;
@@ -105,10 +110,6 @@ and (max-width: 780px) {
     width: 70px;
     height: 70px;
     bottom: 40px;
-  }
-
-  .tour-dates-wrapper {
-    font-size: 60px;
   }
 
   .section_tour-dates {
