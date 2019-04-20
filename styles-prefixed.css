@@ -120,9 +120,7 @@ and (max-width: 780px) {
   }
 
   .bottom-arrow-icon {
-    width: 70px;
-    height: 70px;
-    bottom: 40px;
+    display: none;
   }
 
   .section_tour-dates {
