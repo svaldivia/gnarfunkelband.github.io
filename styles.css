@@ -31,11 +31,11 @@ section {
   min-height: 1000px;
 }
 
-.section_tour-dates {
+.section_layout {
   padding: 60px;
 }
 
-.tour-dates_title {
+.section_title {
   padding-bottom: 20px;
 }
 
@@ -83,12 +83,17 @@ section {
   width: 100%;
 }
 
+.music_layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* Mobile */
 @media only screen and (max-width: 780px) {
   .logo {
     position: initial;
     width: 300px;
-    /* padding: 50px 0; */
   }
   .social-icons_layout {
     position: initial;
@@ -111,7 +116,16 @@ section {
     display: none;
   }
 
-  .section_tour-dates {
+  .section_layout {
     padding: 10px;
+  }
+
+  .music_iframe {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+
+  .music_iframe:last-child {
+    padding: 0;
   }
 }
