@@ -1,0 +1,81 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "prettier"],
+  "env": {
+    "browser": true, // for URL, window etc
+    "commonjs": true, // for require
+    "es6": true,
+    "jquery": true
+  },
+  "globals": {
+    "jsdom": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "class-methods-use-this": "off",
+    // This is a copy-paste of the airbnb-rule (we just wanted to opt in iterators)
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ForInStatement",
+        "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+      },
+      {
+        "selector": "LabeledStatement",
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        "selector": "WithStatement",
+        "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+      }
+    ],
+    "no-plusplus": "off",
+    "react/default-props-match-prop-types": "off",
+    // We use this for private method identification
+    "no-underscore-dangle": [
+      "error",
+      {
+        "enforceInMethodNames": false,
+        "allowAfterThis": true,
+        "allowAfterSuper": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "printWidth": 100,
+        "singleQuote": true,
+        "trailingComma": "all"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "rules": {
+        "prettier/prettier": "off"
+      }
+    }
+  ]
+}

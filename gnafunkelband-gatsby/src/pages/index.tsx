@@ -1,0 +1,108 @@
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
+import { graphql } from 'gatsby';
+
+import SEO from '../components/seo';
+import MainSection from '../components/MainSection';
+
+const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media only screen and (max-width: 780px) {
+    padding: 0 10px;
+  }
+`;
+
+const SectionTitle = styled.h1`
+  padding-bottom: 20px;
+`;
+
+const MusicLayout = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const MusicIframe = styled.iframe`
+  @media only screen and (max-width: 780px) {
+    width: 100%;
+    padding-bottom: 40px;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+`;
+
+const SongkickWidget = styled.div`
+  width: 100%;
+`;
+
+interface Props {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
+  };
+}
+
+const Index = ({ data }: Props) => {
+  const siteTitle = data.site.siteMetadata.title;
+
+  return (
+    <Fragment>
+      <SEO title={siteTitle} />
+      <MainSection />
+
+      <Section>
+        <SectionTitle>Our Music</SectionTitle>
+        <MusicLayout>
+          <MusicIframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/biw8ToAzRTY"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></MusicIframe>
+          <MusicIframe
+            src="https://open.spotify.com/embed/artist/2mwAEuKKSnlOQouag2TUe5"
+            width="560"
+            height="315"
+            frameBorder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></MusicIframe>
+        </MusicLayout>
+      </Section>
+      <Section>
+        <SectionTitle>See Us Live</SectionTitle>
+        <SongkickWidget>
+          <a
+            href="https://www.songkick.com/artists/9888034"
+            data-theme="dark"
+            data-track-button="on"
+            data-detect-style="true"
+            data-background-color="transparent"
+          ></a>
+          <script src="//widget.songkick.com/9888034/widget.js"></script>
+        </SongkickWidget>
+      </Section>
+    </Fragment>
+  );
+};
+
+export default Index;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
