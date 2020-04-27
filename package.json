@@ -1,7 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "gnarfunkel-band",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -45,12 +44,5 @@
     "eslint-plugin-react": "^7.19.0",
     "prettier": "^1.19.1",
     "typescript": "^3.7.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
