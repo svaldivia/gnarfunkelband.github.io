@@ -1,4 +1,6 @@
-import React, { Fragment } from 'react';
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 
@@ -9,6 +11,8 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 60px;
+
   @media only screen and (max-width: 780px) {
     padding: 0 10px;
   }
@@ -53,7 +57,7 @@ const Index = ({ data }: Props) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Fragment>
+    <>
       <SEO title={siteTitle} />
       <MainSection />
 
@@ -67,7 +71,7 @@ const Index = ({ data }: Props) => {
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></MusicIframe>
+          />
           <MusicIframe
             src="https://open.spotify.com/embed/artist/2mwAEuKKSnlOQouag2TUe5"
             width="560"
@@ -75,23 +79,23 @@ const Index = ({ data }: Props) => {
             frameBorder="0"
             allowtransparency="true"
             allow="encrypted-media"
-          ></MusicIframe>
+          />
         </MusicLayout>
       </Section>
       <Section>
         <SectionTitle>See Us Live</SectionTitle>
         <SongkickWidget>
           <a
+            className="songkick-widget"
             href="https://www.songkick.com/artists/9888034"
             data-theme="dark"
             data-track-button="on"
             data-detect-style="true"
             data-background-color="transparent"
-          ></a>
-          <script src="//widget.songkick.com/9888034/widget.js"></script>
+          />
         </SongkickWidget>
       </Section>
-    </Fragment>
+    </>
   );
 };
 
