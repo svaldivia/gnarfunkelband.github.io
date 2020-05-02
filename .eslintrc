@@ -68,7 +68,8 @@
         "singleQuote": true,
         "trailingComma": "all"
       }
-    ]
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }]
   },
   "overrides": [
     {

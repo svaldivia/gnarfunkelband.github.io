@@ -7,7 +7,10 @@
 
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+
+interface Props {
+  title: string;
+}
 
 const SEO = ({ title }: Props) => {
   return (
@@ -27,12 +30,12 @@ const SEO = ({ title }: Props) => {
       <meta property="image" content="https://www.gnarfunkel.com/images/main-fb.jpg" />
 
       {/* <!-- Schema.org for Google --> */}
-      <meta itemprop="name" content="~Gnarfunkel~" />
+      <meta itemProp="name" content="~Gnarfunkel~" />
       <meta
-        itemprop="description"
+        itemProp="description"
         content="West coast rock and roll that's gnarly to a funky extreme."
       />
-      <meta itemprop="image" content="https://www.gnarfunkel.com/images/main-fb.jpg" />
+      <meta itemProp="image" content="https://www.gnarfunkel.com/images/main-fb.jpg" />
 
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary" />
@@ -61,6 +64,9 @@ const SEO = ({ title }: Props) => {
       <meta property="og:url" content="https://www.gnarfunkel.com/" />
       <meta property="og:site_name" content="~Gnarfunkel~" />
       <meta property="og:type" content="website" />
+
+      {/* Songkick Widget */}
+      <script async src="//widget.songkick.com/9888034/widget.js" />
     </Helmet>
   );
 };
