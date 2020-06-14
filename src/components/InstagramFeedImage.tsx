@@ -35,14 +35,10 @@ interface InstagramFeedImageProps {
 const InstagramFeedImage = ({ instagramNode }: InstagramFeedImageProps) => {
   const [isImageFocused, setMouseOverImage] = useState<boolean>(false);
 
-  const {
-    id,
-    localFile: { childImageSharp },
-  } = instagramNode;
-
+  const childImageSharp = instagramNode.localFile && instagramNode.localFile.childImageSharp;
   return (
     <ImageLink
-      href={`https://www.instagram.com/p/${id}/`}
+      href={`https://www.instagram.com/p/${instagramNode.id}/`}
       rel="noopener noreferrer"
       target="_blank"
       onMouseEnter={(): void => setMouseOverImage(true)}
@@ -62,7 +58,7 @@ const InstagramFeedImage = ({ instagramNode }: InstagramFeedImageProps) => {
           : {instagramNode.comments}
         </ImageOverlay>
       )}
-      <Img fluid={childImageSharp.fluid} style={{ height: '100%' }} />
+      {childImageSharp && <Img fluid={childImageSharp.fluid} style={{ height: '100%' }} />}
     </ImageLink>
   );
 };
