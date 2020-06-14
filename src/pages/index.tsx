@@ -105,10 +105,10 @@ const Index = ({ data }: Props) => {
           />
         </SongkickWidget>
       </Section>
-      <Section>
+      {/* <Section>
         <SectionTitle>Follow Us On Instagram</SectionTitle>
         <InstagramFeed />
-      </Section>
+      </Section> */}
       <Footer> Copyright © Gnarfunkel. Website Design by Sebastian Valdivia</Footer>
     </>
   );

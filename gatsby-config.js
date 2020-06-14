@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `~ Gnarfunkel ~`,
+    title: process.env.TEST_VARIABLE || `~ Gnarfunkel ~`,
     description: `Gnarfunkel band site`,
     siteUrl: `https://gnarfunkel.com/`,
   },
