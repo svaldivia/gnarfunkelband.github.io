@@ -6,6 +6,7 @@ import { graphql } from 'gatsby';
 
 import SEO from '../components/seo';
 import MainSection from '../components/MainSection';
+import InstagramFeed from '../components/InstagramFeed';
 
 const Section = styled.div`
   display: flex;
@@ -18,8 +19,17 @@ const Section = styled.div`
   }
 `;
 
+const Footer = styled.div`
+  height: 45;
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 12px;
+`;
+
 const SectionTitle = styled.h1`
   padding-bottom: 20px;
+  text-align: center;
 `;
 
 const MusicLayout = styled.div`
@@ -95,6 +105,11 @@ const Index = ({ data }: Props) => {
           />
         </SongkickWidget>
       </Section>
+      <Section>
+        <SectionTitle>Follow Us On Instagram</SectionTitle>
+        <InstagramFeed />
+      </Section>
+      <Footer> Copyright © Gnarfunkel. Website Design by Sebastian Valdivia</Footer>
     </>
   );
 };

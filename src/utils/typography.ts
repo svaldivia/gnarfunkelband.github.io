@@ -1,6 +1,14 @@
 import Typography from 'typography';
 import fairyGatesTheme from 'typography-theme-fairy-gates';
 
+fairyGatesTheme.headerFontFamily = ['Lobster Two', 'Work Sans'];
+fairyGatesTheme.googleFonts = [
+  ...fairyGatesTheme.googleFonts,
+  {
+    name: 'Lobster Two',
+    styles: ['700'],
+  },
+];
 fairyGatesTheme.overrideThemeStyles = () => {
   return {
     body: {
@@ -23,5 +31,5 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 export default typography;
-export const rhythm = typography.rhythm;
-export const scale = typography.scale;
+export const { rhythm } = typography;
+export const { scale } = typography;
