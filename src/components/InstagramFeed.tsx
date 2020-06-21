@@ -4,6 +4,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import InstagramFeedImage from './InstagramFeedImage';
 
+const maxInstagramFeedPhotos = 12; // Limiting the amount of photos displayed in the feed. We can't add this in the config unless we use the graph API.
+
 interface Edge {
   node: {
     timestamp: number;
@@ -28,10 +30,10 @@ const MainSection = () => {
   postData.allInstaNode.edges.sort(
     (postA: Edge, postB: Edge) => postB.node.timestamp - postA.node.timestamp,
   );
-
+  const instagramFeedPhotosDisplayed = postData.allInstaNode.edges.slice(0, maxInstagramFeedPhotos);
   return (
     <ImagesLayout>
-      {postData.allInstaNode.edges.map(({ node }) => (
+      {instagramFeedPhotosDisplayed.map(({ node }) => (
         <InstagramFeedImage key={node.id} instagramNode={node} />
       ))}
     </ImagesLayout>
