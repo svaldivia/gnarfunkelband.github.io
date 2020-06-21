@@ -28,11 +28,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `gnarfunkelband`,
-      },
-    },
   ],
 };
