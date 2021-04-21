@@ -58,7 +58,9 @@ const InstagramFeedImage = ({ instagramNode }: InstagramFeedImageProps) => {
           : {instagramNode.comments}
         </ImageOverlay>
       )}
-      {childImageSharp && <Img fluid={childImageSharp.fluid} style={{ height: '100%' }} />}
+      {childImageSharp && (
+        <Img fluid={childImageSharp.fluid} style={{ height: '100%', aspectRatio: 1 }} />
+      )}
     </ImageLink>
   );
 };

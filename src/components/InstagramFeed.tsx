@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -25,7 +25,7 @@ const ImagesLayout = styled.div`
   }
 `;
 
-const MainSection = () => {
+const MainSection: FC = () => {
   const postData = useStaticQuery(getPosts);
   postData.allInstaNode.edges.sort(
     (postA: Edge, postB: Edge) => postB.node.timestamp - postA.node.timestamp,
