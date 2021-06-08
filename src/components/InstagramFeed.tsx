@@ -1,23 +1,34 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
 
+// Delete
 import InstagramFeedImage from './InstagramFeedImage';
+import InstagramFeedImageElement from './InstagramFeedImageElement';
+import useInstagramPosts from '../hooks/useInstagramPosts';
 
-const maxInstagramFeedPhotos = 12; // Limiting the amount of photos displayed in the feed. We can't add this in the config unless we use the graph API.
-
-interface Edge {
-  node: {
-    timestamp: number;
-  };
-}
-
-const ImagesLayout = styled.div`
+const Layout = styled.div`
+  width: 100%;
   display: grid;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
+  justify-content: center;
+  grid-template-columns: repeat(3, 293px);
+  grid-auto-rows: 293px;
+
+  @media only screen and (max-width: 780px) and (min-width: 500px) {
+    grid-template-columns: repeat(3, 193px);
+    grid-auto-rows: 193px;
+  }
+
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: repeat(3, 128px);
+    grid-auto-rows: 128px;
+  }
+
+  @media only screen and (max-width: 375px) {
+    grid-template-columns: repeat(3, 115px);
+    grid-auto-rows: 115px;
+  }
 
   @media only screen and (max-width: 780px) {
     grid-column-gap: 4px;
@@ -26,50 +37,22 @@ const ImagesLayout = styled.div`
 `;
 
 const MainSection: FC = () => {
-  const postData = useStaticQuery(getPosts);
-  postData.allInstaNode.edges.sort(
-    (postA: Edge, postB: Edge) => postB.node.timestamp - postA.node.timestamp,
-  );
-  const instagramFeedPhotosDisplayed = postData.allInstaNode.edges.slice(0, maxInstagramFeedPhotos);
+  const { posts, isLoading } = useInstagramPosts();
+
   return (
-    <ImagesLayout>
-      {instagramFeedPhotosDisplayed.map(({ node }) => (
-        <InstagramFeedImage key={node.id} instagramNode={node} />
+    <Layout>
+      {isLoading && <div>Loading...</div>}
+      {posts?.map(post => (
+        <InstagramFeedImageElement
+          key={post.id}
+          permalink={post.permalink}
+          mediaUrl={post.media_url}
+          thumbnailUrl={post.thumbnail_url}
+          mediaType={post.media_type}
+        />
       ))}
-    </ImagesLayout>
+    </Layout>
   );
 };
 
 export default MainSection;
-
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 1600) {
-        ...GatsbyImageSharpFluid_tracedSVG
-      }
-    }
-  }
-`;
-
-const getPosts = graphql`
-  query {
-    allInstaNode {
-      edges {
-        node {
-          id
-          likes
-          comments
-          timestamp
-          localFile {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
