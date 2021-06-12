@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
+// FIXME: DELETE
 const ImageLink = styled.a`
   text-decoration: none;
   background-image: none;
