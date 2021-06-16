@@ -31,7 +31,7 @@ const Logo = styled.div`
 `;
 
 const SocialIconsWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1;

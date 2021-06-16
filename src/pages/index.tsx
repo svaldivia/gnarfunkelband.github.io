@@ -56,6 +56,10 @@ const SongkickWidget = styled.div`
 const Content = styled.div`
   max-width: 1020px;
   margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 900px;
+  }
 `;
 
 interface Props {

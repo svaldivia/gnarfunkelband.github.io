@@ -31,6 +31,8 @@ const Layout = styled.div`
   }
 
   @media only screen and (max-width: 1030px) {
+    grid-template-columns: repeat(3, 293px);
+    grid-auto-rows: 293px;
     grid-column-gap: 4px;
     grid-row-gap: 4px;
   }

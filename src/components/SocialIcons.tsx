@@ -39,7 +39,7 @@ const SocialIcon = styled.a`
 const Layout = styled.div`
   display: grid;
   grid-template-rows: auto auto auto auto auto;
-  padding: 15px 20px;
+  padding: 15px 15px;
   box-sizing: border-box;
 
   @media only screen and (max-width: 780px) {
