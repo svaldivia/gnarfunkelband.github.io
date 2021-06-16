@@ -12,7 +12,6 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 60px;
 
   @media only screen and (max-width: 780px) {
     padding: 0 10px;
@@ -20,9 +19,10 @@ const Section = styled.div`
 `;
 
 const Footer = styled.div`
-  height: 45;
+  border-top: #2b2b2b 1px solid;
+  margin-top: 24px;
   width: 100%;
-  padding: 30px 0;
+  padding: 24px 0;
   text-align: center;
   font-size: 12px;
 `;
@@ -53,6 +53,11 @@ const SongkickWidget = styled.div`
   width: 100%;
 `;
 
+const Content = styled.div`
+  max-width: 1020px;
+  margin: 0 auto;
+`;
+
 interface Props {
   data: {
     site: {
@@ -71,45 +76,47 @@ const Index = ({ data }: Props) => {
       <SEO title={siteTitle} />
       <MainSection />
 
-      <Section>
-        <SectionTitle>Our Music</SectionTitle>
-        <MusicLayout>
-          <MusicIframe
-            width="560"
-            height="315"
-            src="https://www.youtube-nocookie.com/embed/biw8ToAzRTY"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <MusicIframe
-            src="https://open.spotify.com/embed/artist/2mwAEuKKSnlOQouag2TUe5"
-            width="560"
-            height="315"
-            frameBorder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
-          />
-        </MusicLayout>
-      </Section>
-      <Section>
-        <SectionTitle>See Us Live</SectionTitle>
-        <SongkickWidget>
-          <a
-            className="songkick-widget"
-            href="https://www.songkick.com/artists/9888034"
-            data-theme="dark"
-            data-track-button="on"
-            data-detect-style="true"
-            data-background-color="transparent"
-          />
-        </SongkickWidget>
-      </Section>
-      <Section>
-        <SectionTitle>Follow Us On Instagram</SectionTitle>
-        <InstagramFeed />
-      </Section>
-      <Footer> Copyright © Gnarfunkel. Website Design by Sebastian Valdivia</Footer>
+      <Content>
+        <Section>
+          <SectionTitle>Our Music</SectionTitle>
+          <MusicLayout>
+            <MusicIframe
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/biw8ToAzRTY"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+            <MusicIframe
+              src="https://open.spotify.com/embed/artist/2mwAEuKKSnlOQouag2TUe5"
+              width="560"
+              height="315"
+              frameBorder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            />
+          </MusicLayout>
+        </Section>
+        <Section>
+          <SectionTitle>See Us Live</SectionTitle>
+          <SongkickWidget>
+            <a
+              className="songkick-widget"
+              href="https://www.songkick.com/artists/9888034"
+              data-theme="dark"
+              data-track-button="on"
+              data-detect-style="true"
+              data-background-color="transparent"
+            />
+          </SongkickWidget>
+        </Section>
+        <Section>
+          <SectionTitle>Follow Us On Instagram</SectionTitle>
+          <InstagramFeed />
+        </Section>
+      </Content>
+      <Footer> Copyright © Gnarfunkel ~ Website Design by Sebastian Valdivia</Footer>
     </>
   );
 };

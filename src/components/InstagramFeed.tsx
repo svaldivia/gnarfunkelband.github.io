@@ -12,8 +12,8 @@ const Layout = styled.div`
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   justify-content: center;
-  grid-template-columns: repeat(3, 293px);
-  grid-auto-rows: 293px;
+  grid-template-columns: repeat(3, 326px);
+  grid-auto-rows: 326px;
 
   @media only screen and (max-width: 780px) and (min-width: 500px) {
     grid-template-columns: repeat(3, 193px);
@@ -30,7 +30,7 @@ const Layout = styled.div`
     grid-auto-rows: 115px;
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 1030px) {
     grid-column-gap: 4px;
     grid-row-gap: 4px;
   }
