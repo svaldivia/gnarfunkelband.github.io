@@ -84,10 +84,18 @@ const Index = ({ data }: Props) => {
         <Section>
           <SectionTitle>Our Music</SectionTitle>
           <MusicLayout>
-            <MusicIframe
+            {/* <MusicIframe
               width="560"
               height="315"
               src="https://www.youtube-nocookie.com/embed/biw8ToAzRTY"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            /> */}
+            <MusicIframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/tdZsoBjmDQI"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
